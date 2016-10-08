@@ -1,0 +1,671 @@
+$font-default: "Source Sans Pro", Helvetica, Arial, sans-serif
+$font-default-size: 1em
+$font-text-size: 95%
+
+$font-monospace: "Consolas", "Source Code Pro", "Fira Mono", "Courier New", monospace
+
+$color-body-bg: #EEE
+$color-link: steelblue
+$color-link-hover: #987e00
+$color-link-hover-bg: #e6e7bc
+
+html, body
+  margin: 0
+  padding: 0
+
+body
+  font-family: $font-default
+  font-size: $font-default-size
+  background-color: $color-body-bg
+
+p
+  font-size: $font-text-size
+  line-height: 1.4
+  &.h2
+    font-weight: bold
+    font-size: 1.3em
+    margin-top: 2em
+    margin-bottom: 1px
+    background: darken($color-body-bg, 10%)
+    padding: .3em 0
+
+img
+  margin-left: 0
+  max-width: 800px
+  height: auto
+
+.content
+  color: #333
+  p
+    margin-left: 1em
+    margin-right: 1em
+
+  h2
+    padding-left: 1em
+    padding-right: 1em
+
+  table p
+    margin-left: 0
+    margin-right: 0
+
+
+.descr
+  margin-top: 35px
+  margin-bottom: 45px
+  text-align: left
+  vertical-align: top
+
+.name
+  max-width: 75%
+  font-weight: 100
+  color: #1a1a1a
+
+a
+  &:link
+    color: $color-link
+    text-decoration: none
+
+  &:hover, &:visited:hover
+    border-top: 1px dotted $color-link
+    border-bottom: 1px dotted $color-link
+
+  &:visited
+    color: $color-link
+
+  &.qa-mark:target:before
+    content: "***"
+    color: #ff0000
+
+a[href*="http://"]
+  background-image: url(qtdoc/images/ico_out.png)
+  background-repeat: no-repeat
+  background-position: left
+  padding-left: 20px
+
+a[href*="ftp://"]
+  background-image: url(qtdoc/images/ico_out.png)
+  background-repeat: no-repeat
+  background-position: left
+  padding-left: 20px
+
+a[href*="https://"]
+  background-image: url(qtdoc/images/ico_out.png)
+  background-repeat: no-repeat
+  background-position: left
+  padding-left: 20px
+
+.flags
+  text-decoration: none
+  text-height: 24px
+  &:target
+    background-color: #ffffd6
+
+
+.notetitle
+  font-weight: bold
+
+.tiptitle
+  font-weight: bold
+
+.fastpathtitle
+  font-weight: bold
+
+.attentiontitle
+  font-weight: bold
+
+.cautiontitle
+  font-weight: bold
+
+.dangertitle
+  font-weight: bold
+
+.importanttitle
+  font-weight: bold
+
+.remembertitle
+  font-weight: bold
+
+.restrictiontitle
+  font-weight: bold
+
+.note
+  background: #f2f2f2 url(qtdoc/images/ico_note.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.tip
+  background: #f2f2f2 url(qtdoc/images/ico_note.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.fastpath
+  background: #f2f2f2 url(qtdoc/images/ico_note.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.attention
+  background: #f2f2f2 url(qtdoc/images/ico_note_attention.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.caution
+  background: #f2f2f2 url(qtdoc/images/ico_note_attention.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.danger
+  background: #f2f2f2 url(qtdoc/images/ico_note_attention.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.important
+  background: #f2f2f2 url(qtdoc/images/ico_note_attention.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.remember
+  background: #f2f2f2 url(qtdoc/images/ico_note_attention.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.restriction
+  background: #f2f2f2 url(qtdoc/images/ico_note_attention.png)
+  background-repeat: no-repeat
+  background-position: top left
+  padding: 5px
+  padding-left: 40px
+  padding-bottom: 10px
+  border: #999 1px dotted
+  color: #666666
+  margin: 5px
+
+.qtref
+  display: block
+  position: relative
+  height: 15px
+  z-index: 1
+  font-size: 11px
+  padding-right: 10px
+  float: right
+
+.naviNextPrevious
+  clear: both
+  display: block
+  position: relative
+  text-align: right
+  top: -47px
+  float: right
+  height: 20px
+  z-index: 1
+  padding-right: 10px
+  padding-top: 2px
+  vertical-align: top
+  margin: 0
+  > a
+    &:first-child
+      background-image: url(qtdoc/images/btn_prev.png)
+      background-repeat: no-repeat
+      background-position: left
+      height: 20px
+      padding-left: 20px
+
+    &:last-child
+      background-image: url(qtdoc/images/btn_next.png)
+      background-repeat: no-repeat
+      background-position: right
+      padding-right: 20px
+      height: 20px
+      margin-left: 30px
+
+.footer
+  font-size: small
+  padding: 1em
+  color: #777
+
+.footerNavi
+  width: auto
+  text-align: right
+  margin-top: 50px
+  z-index: 1
+
+.navigationbar
+  border-top: 1px solid darken($color-body-bg, 20%)
+  background-color: #FFF
+  z-index: 1
+  padding-left: 7px
+  margin: 0
+  padding: 1px 1em
+  .first
+    background: url(qtdoc/images/home.png)
+    background-position: left
+    background-repeat: no-repeat
+    padding-left: 20px
+
+  ul
+    margin: 0
+    padding: 0
+    li
+      list-style-type: none
+      padding-top: 2px
+      padding-left: 4px
+      margin: 0
+      height: 20px
+      float: left
+      a
+        background: url(qtdoc/images/arrow_bc.png)
+        background-repeat: no-repeat
+        background-position: right
+        padding-right: 17px
+
+  table
+    border: 0 none
+    margin: 0
+    font-size: small
+    td
+      padding: 0
+      border: 0 none
+      a
+        background: url(qtdoc/images/arrow_bc.png)
+        background-repeat: no-repeat
+        background-position: right
+        padding-right: 25px
+
+table
+  $color-border: darken($color-body-bg, 10%)
+
+  -moz-border-radius: 0 0 7px 7px
+  -webkit-border-radius: 0 0 7px 7px
+  border-radius: 0 0 7px 7px
+  border: 1px solid $color-border
+  border-top: 0
+  border-collapse: separate
+  margin-bottom: 25px
+  margin-left: 15px
+  margin-right: 15px
+  line-height: 1.2
+  &.buildversion
+    float: right
+    margin-top: -20px !important
+    font-size: small
+    border: 0
+  tr
+    &.even
+      background-color: white
+      color: #66666e
+
+    &.odd
+      color: #66666e
+
+    &:target
+      background-color: #f6f6d6
+
+  thead
+    text-align: left
+    padding-left: 20px
+    background-color: #e1e0e0
+    border-left: none
+    border-right: none
+    th
+      padding-top: 5px
+      padding-left: 10px
+      padding-bottom: 5px
+      border-bottom: 2px solid #d1d1d1
+      padding-right: 10px
+
+  th
+    text-align: left
+    padding: .2em 1em
+    font-size: $font-text-size
+    border-top: 1px solid $color-border
+
+  td
+    padding: .2em 1em
+    border-top: 1px solid $color-border
+    font-size: $font-text-size
+
+  p
+    margin: 0
+
+  &.alignedsummary, &.propsummary
+    color: #333
+    font-family: $font-monospace
+    font-size: 80%
+
+  tbody tr:last-child td
+    border-bottom: 0
+
+.title
+  color: #313131
+  font-size: 24px
+  font-weight: normal
+  padding: .5em 1em
+  background-color: darken($color-body-bg, 5%)
+  border-bottom: 1px solid darken($color-body-bg, 20%)
+  border-top: 1px solid darken($color-body-bg, 20%)
+  font-weight: bold
+  margin-left: 0
+  margin-right: 0
+
+.subtitle
+  display: block
+  clear: left
+
+.small-subtitle
+  display: block
+  clear: left
+
+.toc
+  display: none
+
+h1
+  margin: 0
+
+h2
+  font-weight: bold
+  font-size: 130%
+  margin-top: 2em
+  margin-bottom: 1px
+  background: #ddd
+  padding: .3em 0
+  &:target
+    background-color: #f2f3d4
+
+h3
+  border-bottom: 1px solid #ccc
+  margin: 1em 1em -.2em 1em
+  padding: 0
+  font-size: 120%
+  &.fn
+    $color-bg: #D7EFDA
+    word-spacing: 3px
+    padding: 5px 1em
+    text-decoration: none
+    font-weight: bold
+    margin: 0
+    background-color: $color-bg
+    border-top: 1px solid darken($color-bg, 5%)
+    border-bottom: 1px solid darken($color-bg, 5%)
+    font-family: $font-monospace
+    font-size: 100%
+    // method visibility
+    code
+      float: right
+      font-size: 80%
+      color: #888
+      margin-top: 1px
+
+    &:target
+      background-color: #f6f6d6
+
+  &.flags
+    word-spacing: 3px
+    padding: 5px 1em
+    text-decoration: none
+    font-weight: bold
+    margin: 0
+    background-color: #e0e0e0
+    border-top: 2px solid #ddd
+    border-bottom: 2px solid #ddd
+    font-family: $font-monospace
+    font-size: 100%
+
+h4
+  margin: auto 1em
+  font-size: 110%
+
+.type
+  color: #808080
+
+.borderless
+  //If you use compass, instead of the line below you could use + border-radius($radius, $vertical-radius)
+  border-radius: 0 0 0 0
+  background-color: #fff
+  border: 1px solid #fff
+  tr
+    background-color: #fff
+    color: #66666e
+
+  td
+    border: none
+    border-bottom: #fff dotted 1px
+
+
+ul
+  margin-top: 10px
+  > li
+    list-style-type: square
+
+li
+  font-size: $font-text-size
+  margin-bottom: 10px
+  padding-left: 8px
+  list-style: outside
+  text-align: left
+
+ol
+  margin: 10px
+  padding: 0
+  > li
+    margin-left: 30px
+    padding-left: 8px
+    list-style: decimal
+
+  &.a > li
+    list-style-type: upper-alpha
+
+  &.a > li
+    list-style-type: lower-alpha
+
+.centerAlign
+  text-align: left
+
+.cpp
+  display: block
+  margin-top: .5em
+  margin-bottom: .5em
+  overflow: auto
+  padding: .2em
+  color: #000
+
+.js
+  display: block
+  margin: 10px
+  overflow: auto
+  padding: 20px
+
+.memItemLeft
+  padding-right: 3px
+
+.memItemRight
+  padding: .4em 1em .3em 0
+
+.qml
+  display: block
+  margin: 10px
+  overflow: auto
+  padding: 20px
+
+.qmldefault
+  padding-left: 5px
+  float: right
+  color: red
+
+.qmlreadonly
+  padding-left: 5px
+  float: right
+  color: #254117
+
+.rightAlign
+  padding: 3px 5px 3px 10px
+  text-align: right
+
+.qmldoc
+  margin-left: 15px
+
+.flowList
+  padding: 25px
+  dd
+    display: inline-block
+    margin-left: 10px
+    width: 255px
+    line-height: 1.15em
+    overflow-x: hidden
+    text-overflow: ellipsis
+
+.alphaChar
+  font-size: 2em
+  position: relative
+
+.toc
+  display: none
+
+.clearfix
+  clear: both
+
+.col-group
+  white-space: nowrap
+  vertical-align: top
+
+.landing
+  h2
+    background-color: transparent
+    border: none
+    margin-bottom: 0
+  li
+    font-size: small
+
+.col-1
+  display: inline-block
+  white-space: normal
+  width: 70%
+  height: 100%
+  float: left
+  h1
+    margin: 20px 0 0
+
+  h2
+    font-size: 18px
+    font-weight: bold !important
+
+.col-2
+  display: inline-block
+  white-space: normal
+  width: 20%
+  margin-left: 5%
+  position: relative
+  top: -20px
+
+.landingicons
+  display: inline-block
+  padding-left: 1em
+
+.icons1of3
+  display: inline-block
+  width: 33.3333%
+  float: left
+  h2
+    font-size: 15px
+    margin: 0
+    padding: 0
+
+pre
+  margin-left: 0
+  margin-right: 0
+  background: #fefefe
+  font-family: $font-monospace
+  font-size: 80%
+  line-height: 1.4
+  color: #333
+
+code
+  font-family: $font-monospace
+  font-size: 80%
+  line-height: 1.4
+  color: #333
+
+span.fn
+  word-spacing: 3px
+  padding: 5px 1em
+  text-decoration: none
+  font-weight: bold
+  margin: 0
+  background-color: #e0e0e0
+  border-top: 2px solid #ddd
+  border-bottom: 2px solid #ddd
+  font-family: $font-monospace
+  font-size: 100%
+
+.table img
+  border: none
+  margin-left: 0
+  -moz-box-shadow: 0 0 0 #fff
+  -webkit-box-shadow: 0 0 0 #fff
+  //If you use compass, instead of the line below you could use + box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 0 0 #fff
+
+#content table
+  font-family: $font-monospace
+  font-size: 85%
+
+.doc-column h2
+  font-size: 15px
+  margin: 0
+  padding: 0
+
+div.multi-column
+  position: relative
+  div
+    display: -moz-inline-box
+    display: inline-block
+    vertical-align: top
+    margin-top: 1em
+    margin-right: 4em
+    width: 24em
