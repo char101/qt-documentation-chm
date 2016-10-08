@@ -238,15 +238,12 @@ a[href*="https://"]
 
 .naviNextPrevious
   clear: both
-  display: block
-  position: relative
+  //position: relative
   text-align: right
-  top: -47px
   float: right
-  height: 20px
   z-index: 1
   padding-right: 10px
-  padding-top: 2px
+  padding-top: 1.1em
   vertical-align: top
   margin: 0
   > a
@@ -256,7 +253,6 @@ a[href*="https://"]
       background-position: left
       height: 20px
       padding-left: 20px
-
     &:last-child
       background-image: url(qtdoc/images/btn_next.png)
       background-repeat: no-repeat
@@ -264,6 +260,9 @@ a[href*="https://"]
       padding-right: 20px
       height: 20px
       margin-left: 30px
+
+.naviSeparator
+  display: none
 
 .footer
   font-size: small
@@ -354,11 +353,8 @@ table
     border-left: none
     border-right: none
     th
-      padding-top: 5px
-      padding-left: 10px
-      padding-bottom: 5px
+      padding: .2em 1em
       border-bottom: 2px solid #d1d1d1
-      padding-right: 10px
 
   th
     text-align: left
@@ -381,6 +377,9 @@ table
 
   tbody tr:last-child td
     border-bottom: 0
+
+  &.generic
+    border-collapse: collapse
 
 .title
   color: #313131
@@ -617,13 +616,15 @@ ol
     padding: 0
 
 pre
-  margin-left: 0
-  margin-right: 0
-  background: #fefefe
+  // background: #fefefe
   font-family: $font-monospace
   font-size: 80%
   line-height: 1.4
   color: #333
+  //border: 1px solid darken($color-body-bg, 5%)
+  border-width: 2px 0
+  background: lighten($color-body-bg, 5%)
+  box-shadow: 0 1px 3px #CCC;
 
 code
   font-family: $font-monospace
