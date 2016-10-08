@@ -1,5 +1,4 @@
-import sys
-
+import argparse
 import re
 import shutil
 import subprocess
@@ -68,9 +67,13 @@ def parse_file_toc(file, parent):
 
 def process_section(elem, parent, module):
     for section in elem.findall('section'):
-        title = section.get('title')
-        href = module.basename() / section.get('ref')
-        child_toc = parent.append(title, href)
+        title = section.get('title').strip()
+        # title could be empty
+        if title:
+            href = module.basename() / section.get('ref')
+            child_toc = parent.append(title, href)
+        else:
+            child_toc = parent
         if not can_skip_section(section):
             process_section(section, child_toc, module)
         elif '#' not in href:
@@ -109,11 +112,17 @@ def process_resource(dir, output_dir):
 style_re = re.compile(r'<link.*?</script>', re.S)
 
 def process_html(file, output_dir):
+    global args
     target = output_dir / file.basename()
-    if not target.exists():
+    if not target.exists() or args.force:
         print('Processing', file)
         with open(file, encoding='utf-8') as r, open(target, 'w', encoding='utf-8') as w:
-            w.write(style_re.sub('<link rel="stylesheet" type="text/css" href="../style.css" />', r.read(), 1))
+            content = r.read()
+            # remove stylesheet set via javascript
+            content = style_re.sub('<link rel="stylesheet" type="text/css" href="../style.css" />', content, 1)
+            # remove empty paragraph after navigation button
+            content = content.replace('</p><p/>', '</p>')
+            w.write(content)
     CHM.append(OUTPUT.relpathto(target))
 
 def process_module(module):
@@ -143,6 +152,10 @@ def main():
             process_module(module)
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '--force', action='store_true', help='Force process HTML')
+    args = parser.parse_args()
+
     OUTPUT.mkdir_p()
     main()
     ostyle = OUTPUT / 'style.css'
